@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT LOCAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>CHAT BOT PRUEBA</h1>
+    <main>
+        <ul>
+            <li class="message bot">
+                <span>
+                    BOT
+                </span>
+                <p> Preguntame lo que usted quiera.</p>
+            </li>
+            <!-- mensajes user
+           <li class="message user">
+                <span>
+                    TU
+                </span>
+                <p>respuesta de usuario</p>
+            </li>
+            <li class="message user">
+                <span>
+                    TU
+                </span>
+                <p>esta es respuesta del usuario y es una respuesta larga para no romper</p>
+            </li>
+            -->
+        </ul>
+    </main>
+    <form>
+        <input type="text" placeholder="escribe un texto aqui...">
+        <button disabled type="submit">ENVIAR</button>
+    </form>
+    <small></small>
+    <template id="message-template">
+        <li class="message">
+            <span></span>
+            <p></p>
+        </li>
+    </template>
+</body>
+<script type="module" src="script.js" ></script>
+
+</html>
