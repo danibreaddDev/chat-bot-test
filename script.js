@@ -1,8 +1,8 @@
 //chat sin llamada a api ni backend ni nada https://github.com/mlc-ai/web-llm
 //importarlo y elegir el modelo a traves del modelId
-//mejora faltaria hacer un worker para separar del hilo principal la carga de los mensajes del bot. 
+//mejora faltaria hacer un worker(hecho) para separar del hilo principal la carga de los mensajes del bot. 
 
-import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm";
+import { CreateWebWorkerMLCEngine } from "https://esm.run/@mlc-ai/web-llm";
 
 //elemento del dom
 const $ = el => document.querySelector(el);
@@ -15,7 +15,10 @@ const $boton = $("button");
 const $delay = 5000;
 const $info = $("small");
 const SELECTED_MODEL = "Llama-3-8B-Instruct-q4f32_1-MLC-1k";
-const engine = await CreateMLCEngine(
+const engine = await CreateWebWorkerMLCEngine(
+    new Worker("./worker.js", {
+        type: "module",
+    }),
     SELECTED_MODEL,
     {
         initProgressCallback: (info) => {
