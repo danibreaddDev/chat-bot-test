@@ -1,5 +1,5 @@
 // worker.ts
-import { MLCEngineWorkerHandler, MLCEngine } from "@mlc-ai/web-llm";
+import { MLCEngineWorkerHandler, MLCEngine } from "https://esm.run/@mlc-ai/web-llm";
 
 // Hookup an MLCEngine to a worker handler
 const engine = new MLCEngine();
